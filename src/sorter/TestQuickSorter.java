@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
+// easy class to test quick sorter
 public class TestQuickSorter {
     @Test
     public void testQuickSortStandard() {

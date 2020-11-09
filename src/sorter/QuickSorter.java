@@ -1,5 +1,8 @@
 package sorter;
 
+/*
+ * A simple implementation of an ordinary quick sort using the final element as the pivot
+ */
 public class QuickSorter {
     int [] list;
 
