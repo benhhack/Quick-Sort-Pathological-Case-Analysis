@@ -1,9 +1,10 @@
+package sorter;
 
 public class QuickSorter {
     int [] list;
 
 
-    public void quickSort(int [] arr, int low, int high) {
+    public int[] quickSort(int [] arr, int low, int high) {
         if (low < high)
         {
             /* pi is partitioning index, arr[pi] is
@@ -15,6 +16,7 @@ public class QuickSorter {
             quickSort(arr, low, pi-1);
             quickSort(arr, pi+1, high);
         }
+        return arr;
     }
 
     /* Takes last element as pivot,
