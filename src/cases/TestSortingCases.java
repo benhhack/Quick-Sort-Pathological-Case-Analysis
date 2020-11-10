@@ -22,6 +22,9 @@ public class TestSortingCases {
     Timestamp endTime;
     long executionTime;
 
+    PathologicalCases cases;
+    Result expectedResult;
+
     @BeforeEach
     public void prepare() {
         // initialise new array
@@ -29,6 +32,7 @@ public class TestSortingCases {
 
         //initalise quick sorter
         sorter = new QuickSorter();
+        cases = new PathologicalCases();
     }
 
     @Test
@@ -49,7 +53,9 @@ public class TestSortingCases {
         System.out.println(endTime);
         System.out.println(executionTime);
 
+        expectedResult = new Result("Fully Sorted", 1, "");
 
+        assertEquals(expectedResult, cases.fullySortedArray());
         assertArrayEquals(initial, sorted);
     }
 
