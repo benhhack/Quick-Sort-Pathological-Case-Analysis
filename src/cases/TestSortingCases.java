@@ -10,7 +10,7 @@ import sorter.QuickSorter;
 import java.util.Arrays;
 import java.sql.Timestamp;
 
-public class SortingCases {
+public class TestSortingCases {
 
     QuickSorter sorter;
 
@@ -39,8 +39,9 @@ public class SortingCases {
             initial[i] = i;
         }
 
+        sorted = initial.clone();
         startTime = new Timestamp(System.currentTimeMillis());
-        sorted = sorter.quickSort(initial, 0, initial.length - 1);
+        sorted = sorter.quickSort(sorted, 0, sorted.length - 1);
         endTime = new Timestamp(System.currentTimeMillis());
 
         executionTime = endTime.getTime() - startTime.getTime();

@@ -54,7 +54,4 @@ public class QuickSorter {
         return i+1;
     }
 
-    public static void main(String args[]) {
-        int[] arr = {1,5,};
-    }
 }
