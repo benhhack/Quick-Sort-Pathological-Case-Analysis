@@ -23,16 +23,8 @@ public class SortRunner {
         results.add(cases.firstHigher());
         results.add(cases.lastLower());
         results.add(cases.zigzag());
-//        results.add(cases.halfSorted());
-//        results.add(cases.lastQuarterSorted());
-
-//        for (int i= 0; i < 10; i++) {
-//            results.add(cases.randomArray());
-//        }
-//        for (int i= 0; i < 10; i++) {
-//            results.add(cases.lastQuarterSorted());
-//        }
-
+        results.add(cases.halfSorted());
+        results.add(cases.lastQuarterSorted());
 
         writeToCSV(results);
     }

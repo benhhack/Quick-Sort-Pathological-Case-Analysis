@@ -84,6 +84,7 @@ public class PathologicalCases {
 
         return new Result("All Same", df.format(sortedness), df.format(averageExecutionTime));
     }
+
     public Result firstHigher() {
         // create arrays of 1s
         array = new int[ARRAY_LENGTH];
@@ -133,7 +134,6 @@ public class PathologicalCases {
         return new Result("Zigzag", df.format(sortedness), df.format(averageExecutionTime));
     }
 
-
     public Result halfSorted() {
         // create a random array
         array = new int[ARRAY_LENGTH];
@@ -163,7 +163,6 @@ public class PathologicalCases {
 
         return new Result("Last Quarter Sorter", df.format(sortedness), df.format(averageExecutionTime));
     }
-
 
     public double findExecutionTime(int [] array) {
 
