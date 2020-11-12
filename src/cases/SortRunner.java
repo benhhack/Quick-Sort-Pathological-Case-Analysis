@@ -21,6 +21,11 @@ public class SortRunner {
 
         // add results to arraylist
         results.add(cases.fullySortedArray());
+        results.add(cases.reversedSorted());
+
+        for (int i= 0; i < 10; i++) {
+            results.add(cases.randomArray());
+        }
         writeToCSV(results);
     }
 
