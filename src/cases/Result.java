@@ -3,14 +3,14 @@ package cases;
 public class Result {
 
     private String name;
-    private double sortedness;
+    private String sortedness;
     private String averageExecutionTime;
 
     public String getName() {
         return name;
     }
 
-    public double getSortedness() {
+    public String getSortedness() {
         return sortedness;
     }
 
@@ -18,7 +18,7 @@ public class Result {
         return averageExecutionTime;
     }
 
-    public Result(String name, double sortedness, String averageExecutionTime) {
+    public Result(String name, String sortedness, String averageExecutionTime) {
         this.name = name;
         this.sortedness = sortedness;
         this.averageExecutionTime = averageExecutionTime;
@@ -29,7 +29,7 @@ public class Result {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Result result = (Result) o;
-        return Double.compare(result.sortedness, sortedness) == 0 &&
+        return sortedness.equals(result.sortedness) &&
                 name.equals(result.name);
     }
 

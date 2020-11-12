@@ -70,7 +70,7 @@ public class TestSortingCases {
         System.out.println(endTime);
         System.out.println(executionTime);
 
-        expectedResult = new Result("Fully Sorted", 1, "");
+        expectedResult = new Result("Fully Sorted", "", "");
 
         assertEquals(expectedResult, cases.fullySortedArray());
         assertArrayEquals(initial, sorted);

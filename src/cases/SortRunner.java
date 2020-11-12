@@ -1,8 +1,5 @@
 package cases;
 
-import org.junit.jupiter.params.shadow.com.univocity.parsers.csv.CsvWriter;
-import sorter.QuickSorter;
-
 import java.io.*;
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -22,20 +19,29 @@ public class SortRunner {
         // add results to arraylist
         results.add(cases.fullySortedArray());
         results.add(cases.reversedSorted());
+        results.add(cases.allSame());
+        results.add(cases.firstHigher());
+        results.add(cases.lastLower());
+        results.add(cases.zigzag());
+//        results.add(cases.halfSorted());
+//        results.add(cases.lastQuarterSorted());
 
-        for (int i= 0; i < 10; i++) {
-            results.add(cases.randomArray());
-        }
+//        for (int i= 0; i < 10; i++) {
+//            results.add(cases.randomArray());
+//        }
+//        for (int i= 0; i < 10; i++) {
+//            results.add(cases.lastQuarterSorted());
+//        }
+
+
         writeToCSV(results);
     }
 
     private static void writeToCSV(ArrayList<Result> results)
     {
-        try
-        {
+        try {
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("./results.csv"), "UTF-8"));
-            for (Result result : results)
-            {
+            for (Result result : results) {
                 StringBuffer oneLine = new StringBuffer();
                 oneLine.append(result.getName());
                 oneLine.append(CSV_SEPARATOR);
