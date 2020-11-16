@@ -51,7 +51,7 @@ public class PathologicalCases {
         sortedness = findSortedness(array);
         averageExecutionTime = findExecutionTime(array);
 
-        return new Result("Fully Sorted", df.format(sortedness), df.format(averageExecutionTime));
+        return new Result("Sorted", df.format(sortedness), df.format(averageExecutionTime));
     }
 
     public Result reversedSorted() {
@@ -67,7 +67,7 @@ public class PathologicalCases {
         averageExecutionTime = findExecutionTime(array);
 
 
-        return new Result("Sorted in Reverse", df.format(sortedness), df.format(averageExecutionTime));
+        return new Result("Reversed", df.format(sortedness), df.format(averageExecutionTime));
     }
 
     public Result allSame() {
@@ -170,9 +170,9 @@ public class PathologicalCases {
         // runs the sort 25 times on original list
         for (int i = 0; i < NUMBER_OF_SORTS; i++){
             sorted = array.clone();
-            startTime = System.nanoTime();
+            startTime = System.currentTimeMillis();
             sorted = sorter.quickSort(sorted, 0, ARRAY_LENGTH - 1);
-            endTime = System.nanoTime();
+            endTime = System.currentTimeMillis();
 
             executionTime = (endTime - startTime);
 

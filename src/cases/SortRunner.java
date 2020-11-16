@@ -3,6 +3,7 @@ package cases;
 import java.io.*;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -17,6 +18,7 @@ public class SortRunner {
         ArrayList<Result> results = new ArrayList<>();
 
         // add results to arraylist
+        results.add(new Result("Case", "Sortedness", "AverageExecutionTime"));
         results.add(cases.fullySortedArray());
         results.add(cases.reversedSorted());
         results.add(cases.allSame());
@@ -24,7 +26,7 @@ public class SortRunner {
         results.add(cases.lastLower());
         results.add(cases.zigzag());
         results.add(cases.halfSorted());
-        results.add(cases.lastQuarterSorted());
+//        results.add(cases.lastQuarterSorted());
 
         writeToCSV(results);
     }
@@ -45,6 +47,9 @@ public class SortRunner {
             }
             bw.flush();
             bw.close();
-        } catch (IOException e){}
+        } catch (IOException e){
+            System.out.println(Arrays.toString(e.getStackTrace()));
+            System.out.println(e.getMessage());
+        }
     }
 }
