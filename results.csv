@@ -1,8 +1,0 @@
-Case,Sortedness,AverageExecutionTime
-Sorted,1,0.243
-Reversed,0.001,0.485
-All Same,1,0.383
-First Higher,0.999,0.836
-Last Lower,0.999,0.377
-Zigzag,0.501,0.091
-Random Sort,0.491,0.013

@@ -18,17 +18,37 @@ public class SortRunner {
         ArrayList<Result> results = new ArrayList<>();
 
         // add results to arraylist
-        results.add(new Result("Case", "Sortedness", "AverageExecutionTime"));
-        results.add(cases.fullySortedArray());
-        results.add(cases.reversedSorted());
+        results.add(new Result("Case", "Sortedness", "AverageExecutionTime(ms)"));
+
+        // fully sorted
+        results.add(cases.fullySorted());
         results.add(cases.allSame());
         results.add(cases.firstHigher());
+        results.add(cases.firstLower());
+        results.add(cases.firstMedian());
+        results.add(cases.lastHigher());
         results.add(cases.lastLower());
-        results.add(cases.zigzag());
-        results.add(cases.halfSorted());
-//        results.add(cases.lastQuarterSorted());
+        results.add(cases.lastMedian());
+
+//        results.add(cases.reversedSorted());
+
+//        results.add(cases.zigzag());
+//        results.add(cases.halfSorted());
+//        results.add(cases.reversedFirstLower());
+//        results.add(cases.reversedLastHigher());
+//        results.add(cases.firstHalfSame());
+//        results.add(cases.lastHalfSame());
+//        results.add(cases.middleHalfSame());
+//        results.add(cases.sortedLastMedian());
+//        results.add(cases.unsortedLastMedian());
+//        results.add(cases.semiSortedLastMedian());
+
+        results.add(cases.quarterSorted());
+        results.add(cases.quarterSortedLastHigher());
+
 
         writeToCSV(results);
+
     }
 
     private static void writeToCSV(ArrayList<Result> results)
