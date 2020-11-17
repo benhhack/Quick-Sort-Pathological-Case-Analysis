@@ -190,7 +190,23 @@ public class PathologicalCases {
         averageExecutionTime = findExecutionTime(array);
 
 
-        return new Result("Reversed", df.format(sortedness), df.format(averageExecutionTime));
+        return new Result("Unsorted", df.format(sortedness), df.format(averageExecutionTime));
+    }
+
+    // unsorted first higher
+    public Result reversedFirstHigher(){
+        array = new int[ARRAY_LENGTH];
+        array[0] = 1001;
+
+        for (int i = ARRAY_LENGTH - 1; i > 1; i--) {
+            array[i] = ARRAY_LENGTH-i;
+        }
+        sortedness = findSortedness(array);
+        averageExecutionTime = findExecutionTime(array);
+
+
+        return new Result("First Higher", df.format(sortedness), df.format(averageExecutionTime));
+
     }
 
     // unsorted first lower
@@ -205,7 +221,23 @@ public class PathologicalCases {
         averageExecutionTime = findExecutionTime(array);
 
 
-        return new Result("Reversed First Lower", df.format(sortedness), df.format(averageExecutionTime));
+        return new Result("First Lower", df.format(sortedness), df.format(averageExecutionTime));
+
+    }
+
+    // unsorted first median
+    public Result reversedFirstMedian(){
+        array = new int[ARRAY_LENGTH];
+        array[0] = 499;
+
+        for (int i = ARRAY_LENGTH - 1; i > 1; i--) {
+            array[i] = ARRAY_LENGTH-i;
+        }
+        sortedness = findSortedness(array);
+        averageExecutionTime = findExecutionTime(array);
+
+
+        return new Result("First Median", df.format(sortedness), df.format(averageExecutionTime));
 
     }
 
@@ -221,7 +253,24 @@ public class PathologicalCases {
         averageExecutionTime = findExecutionTime(array);
 
 
-        return new Result("Reversed Last Higher", df.format(sortedness), df.format(averageExecutionTime));
+        return new Result("Last Higher", df.format(sortedness), df.format(averageExecutionTime));
+
+    }
+
+    // unsorted last lower
+    public Result reversedLastLower(){
+        array = new int[ARRAY_LENGTH];
+
+
+        for (int i = ARRAY_LENGTH - 2; i > 0; i--) {
+            array[i] = ARRAY_LENGTH-i;
+        }
+        array[999] = -1;
+        sortedness = findSortedness(array);
+        averageExecutionTime = findExecutionTime(array);
+
+
+        return new Result("Last Lower", df.format(sortedness), df.format(averageExecutionTime));
 
     }
 
@@ -238,7 +287,7 @@ public class PathologicalCases {
         sortedness = findSortedness(array);
         averageExecutionTime = findExecutionTime(array);
 
-        return new Result("Unsorted last median", df.format(sortedness), df.format(averageExecutionTime));
+        return new Result("Last Median", df.format(sortedness), df.format(averageExecutionTime));
     }
 
     /*
@@ -273,10 +322,43 @@ public class PathologicalCases {
         sortedness = findSortedness(array);
         averageExecutionTime = findExecutionTime(array);
 
-        return new Result("Random Sort", df.format(sortedness), df.format(averageExecutionTime));
+        return new Result("Half Sorted", df.format(sortedness), df.format(averageExecutionTime));
     }
 
-    public Result semiSortedLastMedian() {
+    // half sorted last value higher
+    public Result halfSortedLastHigher() {
+        int max = 1000;
+        int min = 0;
+        array = new int[ARRAY_LENGTH];
+        for (int i = 0; i < ARRAY_LENGTH-1; i++) {
+            array[i] = random.nextInt(max - min + 1) + min;
+        }
+        array[999] = 1001;
+
+        sortedness = findSortedness(array);
+        averageExecutionTime = findExecutionTime(array);
+
+        return new Result("Last Higher", df.format(sortedness), df.format(averageExecutionTime));
+    }
+
+    // half sorted last value lower
+    public Result halfSortedLastLower() {
+        int max = 1000;
+        int min = 0;
+        array = new int[ARRAY_LENGTH];
+        for (int i = 0; i < ARRAY_LENGTH-1; i++) {
+            array[i] = random.nextInt(max - min + 1) + min;
+        }
+        array[999] = -1;
+
+        sortedness = findSortedness(array);
+        averageExecutionTime = findExecutionTime(array);
+
+        return new Result("Last Lower", df.format(sortedness), df.format(averageExecutionTime));
+    }
+
+    // half sorted last value median
+    public Result halfSortedLastMedian() {
         int max = 1000;
         int min = 0;
         array = new int[ARRAY_LENGTH];
@@ -291,44 +373,161 @@ public class PathologicalCases {
         return new Result("Random last median", df.format(sortedness), df.format(averageExecutionTime));
     }
 
+    // half sorted first value higher
+    public Result halfSortedFirstHigher() {
+        int max = 1000;
+        int min = 0;
+        array = new int[ARRAY_LENGTH];
+        for (int i = 0; i < ARRAY_LENGTH; i++) {
+            array[i] = random.nextInt(max - min + 1) + min;
+        }
+        array[0] = 1001;
+
+        sortedness = findSortedness(array);
+        averageExecutionTime = findExecutionTime(array);
+
+        return new Result("First Higher", df.format(sortedness), df.format(averageExecutionTime));
+    }
+
+    // half sorted first value lower
+    public Result halfSortedFirstLower() {
+        int max = 1000;
+        int min = 0;
+        array = new int[ARRAY_LENGTH];
+        for (int i = 0; i < ARRAY_LENGTH; i++) {
+            array[i] = random.nextInt(max - min + 1) + min;
+        }
+        array[0] = -1;
+
+        sortedness = findSortedness(array);
+        averageExecutionTime = findExecutionTime(array);
+
+        return new Result("First Lower", df.format(sortedness), df.format(averageExecutionTime));
+    }
+
+    // half sorted last value median
+    public Result halfSortedFirstMedian() {
+        int max = 1000;
+        int min = 0;
+        array = new int[ARRAY_LENGTH];
+        for (int i = 0; i < ARRAY_LENGTH; i++) {
+            array[i] = random.nextInt(max - min + 1) + min;
+        }
+        array[0] = 499;
+
+        sortedness = findSortedness(array);
+        averageExecutionTime = findExecutionTime(array);
+
+        return new Result("First Median", df.format(sortedness), df.format(averageExecutionTime));
+    }
+
     /*
      * Sortedness = 0.75
      */
-    // first half same, second half random
-    public Result firstHalfSame() {
+
+    // three quarter sorted
+    public Result threeQuarterSorted() {
+        // create a random array
         array = new int[ARRAY_LENGTH];
-         for (int i = 0; i < ARRAY_LENGTH; i++) {
-             array[i] = i < 500 ? 1: random.nextInt();
-         }
-        sortedness = findSortedness(array);
-        averageExecutionTime = findExecutionTime(array);
-
-        return new Result("1st Half Same", df.format(sortedness), df.format(averageExecutionTime));
-    }
-
-    // last half same, first half random
-    public Result lastHalfSame() {
-        array = new int[ARRAY_LENGTH];
-         for (int i = 0; i < ARRAY_LENGTH; i++) {
-             array[i] = i > 500 ? 1: random.nextInt();
-         }
-        sortedness = findSortedness(array);
-        averageExecutionTime = findExecutionTime(array);
-
-        return new Result("Last Half Same", df.format(sortedness), df.format(averageExecutionTime));
-    }
-
-    // middle half same
-    public Result middleHalfSame() {
-        array = new int[ARRAY_LENGTH];
-        for (int i = 0; i < ARRAY_LENGTH; i++) {
-            array[i] = (i > 250 && i < 750) ? 1: random.nextInt();
+        for (int i = ARRAY_LENGTH - 1; i > 0; i--) {
+            array[i] = i % 4 == 0 ? 1: i;
         }
         sortedness = findSortedness(array);
         averageExecutionTime = findExecutionTime(array);
 
-        return new Result("Middle Half Same", df.format(sortedness), df.format(averageExecutionTime));
+        return new Result("3/4 Sorted", df.format(sortedness), df.format(averageExecutionTime));
     }
+
+    // three quarter sorted first higher
+    public Result threeQuarterSortedFirstHigher() {
+        // create a random array
+        array = new int[ARRAY_LENGTH];
+        for (int i = ARRAY_LENGTH - 1; i > 0; i--) {
+            array[i] = i % 4 == 0 ? 1: i;
+        }
+        array[0] = 1001;
+
+        sortedness = findSortedness(array);
+        averageExecutionTime = findExecutionTime(array);
+
+        return new Result("First Higher", df.format(sortedness), df.format(averageExecutionTime));
+    }
+
+    // three quarter sorted first higher
+    public Result threeQuarterSortedFirstLower() {
+        // create a random array
+        array = new int[ARRAY_LENGTH];
+        for (int i = ARRAY_LENGTH - 1; i > 0; i--) {
+            array[i] = i % 4 == 0 ? 1: i;
+        }
+        array[0] = -1;
+
+        sortedness = findSortedness(array);
+        averageExecutionTime = findExecutionTime(array);
+
+        return new Result("First Lower", df.format(sortedness), df.format(averageExecutionTime));
+    }
+
+    // three quarter sorted first higher
+    public Result threeQuarterSortedFirstMedian() {
+        // create a random array
+        array = new int[ARRAY_LENGTH];
+        for (int i = ARRAY_LENGTH - 1; i > 0; i--) {
+            array[i] = i % 4 == 0 ? 1: i;
+        }
+        array[0] = 499;
+
+        sortedness = findSortedness(array);
+        averageExecutionTime = findExecutionTime(array);
+
+        return new Result("First Median", df.format(sortedness), df.format(averageExecutionTime));
+    }
+
+    // three quarter sorted last higher
+    public Result threeQuarterSortedLastHigher() {
+        // create a random array
+        array = new int[ARRAY_LENGTH];
+        for (int i = ARRAY_LENGTH - 1; i > 0; i--) {
+            array[i] = i % 4 == 0 ? 1: i;
+        }
+        array[999] = 1001;
+
+        sortedness = findSortedness(array);
+        averageExecutionTime = findExecutionTime(array);
+
+        return new Result("Last Higher", df.format(sortedness), df.format(averageExecutionTime));
+    }
+
+    // three quarter sorted last lower
+    public Result threeQuarterSortedLastLower() {
+        // create a random array
+        array = new int[ARRAY_LENGTH];
+        for (int i = ARRAY_LENGTH - 1; i > 0; i--) {
+            array[i] = i % 4 == 0 ? 1: i;
+        }
+        array[999] = -1;
+
+        sortedness = findSortedness(array);
+        averageExecutionTime = findExecutionTime(array);
+
+        return new Result("Last Lower", df.format(sortedness), df.format(averageExecutionTime));
+    }
+
+    // three quarter sorted last median
+    public Result threeQuarterSortedLLastMedian() {
+        // create a random array
+        array = new int[ARRAY_LENGTH];
+        for (int i = ARRAY_LENGTH - 1; i > 0; i--) {
+            array[i] = i % 4 == 0 ? 1: i;
+        }
+        array[999] = 499;
+
+        sortedness = findSortedness(array);
+        averageExecutionTime = findExecutionTime(array);
+
+        return new Result("Last Median", df.format(sortedness), df.format(averageExecutionTime));
+    }
+
 
     /*
      * Sortedness = 0.25
@@ -347,7 +546,49 @@ public class PathologicalCases {
         return new Result("Quarter sort", df.format(sortedness), df.format(averageExecutionTime));
     }
 
-    // quater sort
+    // quater sorted first higher
+    public Result quarterSortedFirstHigher() {
+        // create a random array
+        array = new int[ARRAY_LENGTH];
+        for (int i = ARRAY_LENGTH - 2; i >= 0; i--) {
+            array[i] = i % 4 == 0 ? 1: ARRAY_LENGTH - i;
+        }
+        array[0] = 1001;
+        sortedness = findSortedness(array);
+        averageExecutionTime = findExecutionTime(array);
+
+        return new Result("First Higher", df.format(sortedness), df.format(averageExecutionTime));
+    }
+
+    // quater sorted First lower
+    public Result quarterSortedFirstLower() {
+        // create a random array
+        array = new int[ARRAY_LENGTH];
+        for (int i = ARRAY_LENGTH - 1; i > 1; i--) {
+            array[i] = i % 4 == 0 ? 1: ARRAY_LENGTH - i;
+        }
+        array[0] = -1;
+        sortedness = findSortedness(array);
+        averageExecutionTime = findExecutionTime(array);
+
+        return new Result("First Lower", df.format(sortedness), df.format(averageExecutionTime));
+    }
+
+    // quater sorted First median
+    public Result quarterSortedFirstMedian() {
+        // create a random array
+        array = new int[ARRAY_LENGTH];
+        for (int i = ARRAY_LENGTH - 1; i > 1; i--) {
+            array[i] = i % 4 == 0 ? 1: ARRAY_LENGTH - i;
+        }
+        array[0] = 499;
+        sortedness = findSortedness(array);
+        averageExecutionTime = findExecutionTime(array);
+
+        return new Result("First Median", df.format(sortedness), df.format(averageExecutionTime));
+    }
+
+    // quater sorted last higher
     public Result quarterSortedLastHigher() {
         // create a random array
         array = new int[ARRAY_LENGTH];
@@ -358,21 +599,35 @@ public class PathologicalCases {
         sortedness = findSortedness(array);
         averageExecutionTime = findExecutionTime(array);
 
-        return new Result("Quarter sort last higher", df.format(sortedness), df.format(averageExecutionTime));
+        return new Result("Last Higher", df.format(sortedness), df.format(averageExecutionTime));
     }
 
-    // quater sort
+    // quater sorted last lower
     public Result quarterSortedLastLower() {
         // create a random array
         array = new int[ARRAY_LENGTH];
         for (int i = ARRAY_LENGTH - 1; i > 1; i--) {
             array[i] = i % 4 == 0 ? 1: ARRAY_LENGTH - i;
         }
-        array[999] = 1001;
+        array[999] = -1;
         sortedness = findSortedness(array);
         averageExecutionTime = findExecutionTime(array);
 
-        return new Result("Quarter sort last lower", df.format(sortedness), df.format(averageExecutionTime));
+        return new Result("Last Lower", df.format(sortedness), df.format(averageExecutionTime));
+    }
+
+    // quater sorted last median
+    public Result quarterSortedLastMedian() {
+        // create a random array
+        array = new int[ARRAY_LENGTH];
+        for (int i = ARRAY_LENGTH - 1; i > 1; i--) {
+            array[i] = i % 4 == 0 ? 1: ARRAY_LENGTH - i;
+        }
+        array[999] = 499;
+        sortedness = findSortedness(array);
+        averageExecutionTime = findExecutionTime(array);
+
+        return new Result("Last Median", df.format(sortedness), df.format(averageExecutionTime));
     }
 
     /*

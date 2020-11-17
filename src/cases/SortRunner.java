@@ -30,22 +30,42 @@ public class SortRunner {
         results.add(cases.lastLower());
         results.add(cases.lastMedian());
 
-//        results.add(cases.reversedSorted());
+        // unsorted
+        results.add(cases.reversedSorted());
+        results.add(cases.reversedFirstHigher());
+        results.add(cases.reversedFirstLower());
+        results.add(cases.reversedFirstMedian());
+        results.add(cases.reversedLastHigher());
+        results.add(cases.reversedLastLower());
+        results.add(cases.unsortedLastMedian());
 
-//        results.add(cases.zigzag());
-//        results.add(cases.halfSorted());
-//        results.add(cases.reversedFirstLower());
-//        results.add(cases.reversedLastHigher());
-//        results.add(cases.firstHalfSame());
-//        results.add(cases.lastHalfSame());
-//        results.add(cases.middleHalfSame());
-//        results.add(cases.sortedLastMedian());
-//        results.add(cases.unsortedLastMedian());
-//        results.add(cases.semiSortedLastMedian());
+        // half sorted
+        results.add(cases.zigzag());
+        results.add(cases.halfSorted());
+        results.add(cases.halfSortedLastHigher());
+        results.add(cases.halfSortedLastLower());
+        results.add(cases.halfSortedLastMedian());
+        results.add(cases.halfSortedFirstLower());
+        results.add(cases.halfSortedFirstHigher());
+        results.add(cases.halfSortedFirstMedian());
 
+        // 3/4 sorted
+        results.add(cases.threeQuarterSorted());
+        results.add(cases.threeQuarterSortedFirstHigher());
+        results.add(cases.threeQuarterSortedFirstLower());
+        results.add(cases.threeQuarterSortedFirstMedian());
+        results.add(cases.threeQuarterSortedLastHigher());
+        results.add(cases.threeQuarterSortedLastLower());
+        results.add(cases.threeQuarterSortedLLastMedian());
+
+        // 1/4 sorted
         results.add(cases.quarterSorted());
+        results.add(cases.quarterSortedFirstHigher());
+        results.add(cases.quarterSortedFirstLower());
+        results.add(cases.quarterSortedFirstMedian());
         results.add(cases.quarterSortedLastHigher());
-
+        results.add(cases.quarterSortedLastLower());
+        results.add(cases.quarterSortedLastMedian());
 
         writeToCSV(results);
 
