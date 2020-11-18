@@ -4,7 +4,6 @@ import sorter.QuickSorter;
 
 import java.text.DecimalFormat;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
 public class PathologicalCases {
@@ -428,7 +427,7 @@ public class PathologicalCases {
      * Sortedness = 0.25
      */
 
-    // quater sort
+    // quarter sort
     public Result quarterSorted() {
         // create a random array
         array = new int[ARRAY_LENGTH];
@@ -441,7 +440,7 @@ public class PathologicalCases {
         return new Result("Quarter sort", df.format(sortedness), df.format(averageExecutionTime));
     }
 
-    // quater sorted first higher
+    // quarter sorted first higher
     public Result quarterSortedFirstHigher() {
         // create a random array
         array = new int[ARRAY_LENGTH];
@@ -455,7 +454,7 @@ public class PathologicalCases {
         return new Result("First Higher", df.format(sortedness), df.format(averageExecutionTime));
     }
 
-    // quater sorted First lower
+    // quarter sorted First lower
     public Result quarterSortedFirstLower() {
         // create a random array
         array = new int[ARRAY_LENGTH];
@@ -469,7 +468,7 @@ public class PathologicalCases {
         return new Result("First Lower", df.format(sortedness), df.format(averageExecutionTime));
     }
 
-    // quater sorted First median
+    // quarter sorted First median
     public Result quarterSortedFirstMedian() {
         // create a random array
         array = new int[ARRAY_LENGTH];
@@ -483,7 +482,7 @@ public class PathologicalCases {
         return new Result("First Median", df.format(sortedness), df.format(averageExecutionTime));
     }
 
-    // quater sorted last higher
+    // quarter sorted last higher
     public Result quarterSortedLastHigher() {
         // create a random array
         array = new int[ARRAY_LENGTH];
@@ -497,7 +496,7 @@ public class PathologicalCases {
         return new Result("Last Higher", df.format(sortedness), df.format(averageExecutionTime));
     }
 
-    // quater sorted last lower
+    // quarter sorted last lower
     public Result quarterSortedLastLower() {
         // create a random array
         array = new int[ARRAY_LENGTH];
@@ -511,7 +510,7 @@ public class PathologicalCases {
         return new Result("Last Lower", df.format(sortedness), df.format(averageExecutionTime));
     }
 
-    // quater sorted last median
+    // quarter sorted last median
     public Result quarterSortedLastMedian() {
         // create a random array
         array = new int[ARRAY_LENGTH];
@@ -571,7 +570,7 @@ public class PathologicalCases {
     }
 
     // creates a random array
-    private int [] createRandomArray() {
+    public int [] createRandomArray() {
         int max = 1000;
         int min = 0;
         array = new int[ARRAY_LENGTH];
