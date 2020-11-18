@@ -1,6 +1,7 @@
 package cases;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -9,7 +10,7 @@ public class SortRunner {
     private static final String CSV_SEPARATOR = ",";
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         // create cases object and results list
         PathologicalCases cases = new PathologicalCases();
@@ -72,15 +73,14 @@ public class SortRunner {
     private static void writeToCSV(ArrayList<Result> results)
     {
         try {
-            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("./results.csv"), "UTF-8"));
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("./results.csv"), StandardCharsets.UTF_8));
             for (Result result : results) {
-                StringBuffer oneLine = new StringBuffer();
-                oneLine.append(result.getName());
-                oneLine.append(CSV_SEPARATOR);
-                oneLine.append(result.getSortedness())  ;
-                oneLine.append(CSV_SEPARATOR);
-                oneLine.append(result.getAverageExecutionTime());
-                bw.write(oneLine.toString());
+                String oneLine = result.getName() +
+                        CSV_SEPARATOR +
+                        result.getSortedness() +
+                        CSV_SEPARATOR +
+                        result.getAverageExecutionTime();
+                bw.write(oneLine);
                 bw.newLine();
             }
             bw.flush();

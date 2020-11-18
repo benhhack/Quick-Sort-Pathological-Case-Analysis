@@ -2,11 +2,7 @@ package cases;
 
 import sorter.QuickSorter;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.sql.Timestamp;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -20,8 +16,6 @@ public class PathologicalCases {
     Random random = new Random();
     int [] array;
     int [] sorted;
-    Result result;
-    List<Result> results;
 
     DecimalFormat df = new DecimalFormat("#.###");
     double startTime;
@@ -327,12 +321,7 @@ public class PathologicalCases {
 
     // half sorted last value higher
     public Result halfSortedLastHigher() {
-        int max = 1000;
-        int min = 0;
-        array = new int[ARRAY_LENGTH];
-        for (int i = 0; i < ARRAY_LENGTH-1; i++) {
-            array[i] = random.nextInt(max - min + 1) + min;
-        }
+        array = createRandomArray();
         array[999] = 1001;
 
         sortedness = findSortedness(array);
@@ -343,12 +332,7 @@ public class PathologicalCases {
 
     // half sorted last value lower
     public Result halfSortedLastLower() {
-        int max = 1000;
-        int min = 0;
-        array = new int[ARRAY_LENGTH];
-        for (int i = 0; i < ARRAY_LENGTH-1; i++) {
-            array[i] = random.nextInt(max - min + 1) + min;
-        }
+        array = createRandomArray();
         array[999] = -1;
 
         sortedness = findSortedness(array);
@@ -359,12 +343,7 @@ public class PathologicalCases {
 
     // half sorted last value median
     public Result halfSortedLastMedian() {
-        int max = 1000;
-        int min = 0;
-        array = new int[ARRAY_LENGTH];
-        for (int i = 0; i < ARRAY_LENGTH-1; i++) {
-            array[i] = random.nextInt(max - min + 1) + min;
-        }
+        array = createRandomArray();
         array[999] = 499;
 
         sortedness = findSortedness(array);
@@ -375,12 +354,7 @@ public class PathologicalCases {
 
     // half sorted first value higher
     public Result halfSortedFirstHigher() {
-        int max = 1000;
-        int min = 0;
-        array = new int[ARRAY_LENGTH];
-        for (int i = 0; i < ARRAY_LENGTH; i++) {
-            array[i] = random.nextInt(max - min + 1) + min;
-        }
+        array = createRandomArray();
         array[0] = 1001;
 
         sortedness = findSortedness(array);
@@ -391,12 +365,7 @@ public class PathologicalCases {
 
     // half sorted first value lower
     public Result halfSortedFirstLower() {
-        int max = 1000;
-        int min = 0;
-        array = new int[ARRAY_LENGTH];
-        for (int i = 0; i < ARRAY_LENGTH; i++) {
-            array[i] = random.nextInt(max - min + 1) + min;
-        }
+        array = createRandomArray();
         array[0] = -1;
 
         sortedness = findSortedness(array);
@@ -407,12 +376,7 @@ public class PathologicalCases {
 
     // half sorted last value median
     public Result halfSortedFirstMedian() {
-        int max = 1000;
-        int min = 0;
-        array = new int[ARRAY_LENGTH];
-        for (int i = 0; i < ARRAY_LENGTH; i++) {
-            array[i] = random.nextInt(max - min + 1) + min;
-        }
+        array = createRandomArray();
         array[0] = 499;
 
         sortedness = findSortedness(array);
@@ -674,4 +638,17 @@ public class PathologicalCases {
 
         return sortedness;
     }
+
+    // creates a random array
+    private int [] createRandomArray() {
+        int max = 1000;
+        int min = 0;
+        array = new int[ARRAY_LENGTH];
+        for (int i = 0; i < ARRAY_LENGTH-1; i++) {
+            array[i] = random.nextInt(max - min + 1) + min;
+        }
+        return array;
+    }
+
 }
+

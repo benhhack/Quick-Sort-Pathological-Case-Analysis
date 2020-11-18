@@ -4,11 +4,9 @@ This project implements an ordinary (not in place) quicksort on a number of diff
 It then analyses the execution times of running these algorithms to examine the performance of the quicksort on 
 these cases.
 
-## Project Structure
+## Using the Project
 
-The project is split up into three packages. The sorter and cases packages contain are written in Java while 
-the analysis is written in Python.
+To use this project, run the sort runner from the Sort Runner class.
+Then, run the analysis (analysis.ipynb) in a Jupyter Notebook.
 
-#### Sorter
-
-Implements an ordinary quicksort using the final element as the pivot.
+The tests can be run within sorter package and the cases.tests package.
