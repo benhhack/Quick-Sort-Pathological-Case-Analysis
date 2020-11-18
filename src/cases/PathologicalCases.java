@@ -68,23 +68,6 @@ public class PathologicalCases {
         return new Result("First Higher", df.format(sortedness), df.format(averageExecutionTime));
     }
 
-    // sorted with first lower
-    public Result firstLower() {
-        // create arrays of 1s
-        array = new int[ARRAY_LENGTH];
-
-        array[0] = -1;
-        for (int i = 1; i < ARRAY_LENGTH; i++) {
-            array[i] = i;
-        }
-
-        sortedness = findSortedness(array);
-        averageExecutionTime = findExecutionTime(array);
-
-
-        return new Result("First Lower", df.format(sortedness), df.format(averageExecutionTime));
-    }
-
     // sorted with first median
     public Result firstMedian() {
         // create arrays of 1s
@@ -100,23 +83,6 @@ public class PathologicalCases {
 
 
         return new Result("First Median", df.format(sortedness), df.format(averageExecutionTime));
-    }
-
-    //sorted with last higher
-    public Result lastHigher() {
-        // create arrays of 1s
-        array = new int[ARRAY_LENGTH];
-
-        for (int i = 1; i < ARRAY_LENGTH - 1; i++) {
-            array[i] = i;
-        }
-        array[999] = 1001;
-
-        sortedness = findSortedness(array);
-        averageExecutionTime = findExecutionTime(array);
-
-
-        return new Result("Last Higher", df.format(sortedness), df.format(averageExecutionTime));
     }
 
     //sorted with last lower
@@ -187,22 +153,6 @@ public class PathologicalCases {
         return new Result("Unsorted", df.format(sortedness), df.format(averageExecutionTime));
     }
 
-    // unsorted first higher
-    public Result reversedFirstHigher(){
-        array = new int[ARRAY_LENGTH];
-        array[0] = 1001;
-
-        for (int i = ARRAY_LENGTH - 1; i > 1; i--) {
-            array[i] = ARRAY_LENGTH-i;
-        }
-        sortedness = findSortedness(array);
-        averageExecutionTime = findExecutionTime(array);
-
-
-        return new Result("First Higher", df.format(sortedness), df.format(averageExecutionTime));
-
-    }
-
     // unsorted first lower
     public Result reversedFirstLower(){
         array = new int[ARRAY_LENGTH];
@@ -251,23 +201,6 @@ public class PathologicalCases {
 
     }
 
-    // unsorted last lower
-    public Result reversedLastLower(){
-        array = new int[ARRAY_LENGTH];
-
-
-        for (int i = ARRAY_LENGTH - 2; i > 0; i--) {
-            array[i] = ARRAY_LENGTH-i;
-        }
-        array[999] = -1;
-        sortedness = findSortedness(array);
-        averageExecutionTime = findExecutionTime(array);
-
-
-        return new Result("Last Lower", df.format(sortedness), df.format(averageExecutionTime));
-
-    }
-
     // reversed last median
     public  Result unsortedLastMedian() {
 
@@ -287,7 +220,6 @@ public class PathologicalCases {
     /*
      * Sortedness = 0.5
      */
-
     // zigzagging values
     public Result zigzag() {
         // create arrays of 1s
@@ -388,7 +320,6 @@ public class PathologicalCases {
     /*
      * Sortedness = 0.75
      */
-
     // three quarter sorted
     public Result threeQuarterSorted() {
         // create a random array
@@ -502,7 +433,7 @@ public class PathologicalCases {
         // create a random array
         array = new int[ARRAY_LENGTH];
         for (int i = ARRAY_LENGTH - 1; i > 0; i--) {
-            array[i] = i;
+            array[i] = i % 4 == 0 ? 1: ARRAY_LENGTH - i;
         }
         sortedness = findSortedness(array);
         averageExecutionTime = findExecutionTime(array);
@@ -602,7 +533,7 @@ public class PathologicalCases {
     public double findExecutionTime(int [] array) {
 
         executionTimes = new double[NUMBER_OF_SORTS];
-        // runs the sort 25 times on original list
+        // runs the sort 10 500 times on original list and captures start and end
         for (int i = 0; i < NUMBER_OF_SORTS; i++){
             sorted = array.clone();
             startTime = System.currentTimeMillis();

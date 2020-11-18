@@ -10,3 +10,5 @@ To use this project, run the sort runner from the Sort Runner class.
 Then, run the analysis (analysis.ipynb) in a Jupyter Notebook.
 
 The tests can be run within sorter package and the cases.tests package.
+Note that the Pathological Cases methods which 
+create arrays were not tested since these are trivial. 

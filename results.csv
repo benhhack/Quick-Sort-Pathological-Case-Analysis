@@ -1,38 +1,34 @@
 Case,Sortedness,AverageExecutionTime(ms)
-Sorted,1,0.335
-All Same,1,0.242
-First Higher,0.999,0.889
-First Lower,1,0.887
-First Median,0.999,0.892
-Last Higher,1,1.211
-Last Lower,0.999,0.373
-Last Median,0.999,0.608
-Unsorted,0.001,0.865
-First Higher,0.001,1.071
-First Lower,0.002,1.257
-First Median,0.001,0.357
-Last Higher,0.002,0.741
-Last Lower,0.001,1.145
-Last Median,0.001,0.376
-Zigzag,0.499,0.116
-Half Sorted,0.509,0.053
-Last Higher,0.508,0.025
-Last Lower,0.496,0.018
-Random last median,0.488,0.018
-First Lower,0.513,0.019
-First Higher,0.514,0.021
-First Median,0.491,0.059
-3/4 Sorted,0.751,0.099
-First Higher,0.75,0.075
-First Lower,0.751,0.043
-First Median,0.75,0.069
-Last Higher,0.751,0.077
-Last Lower,0.75,0.048
-Last Median,0.75,0.048
-Quarter sort,1,1.995
-First Higher,0.249,0.212
-First Lower,0.251,0.193
-First Median,0.25,0.094
-Last Higher,0.251,0.269
-Last Lower,0.251,0.188
-Last Median,0.252,0.12
+Sorted,1,0.319
+First Higher,0.999,0.825
+First Median,0.999,0.869
+All Same,1,0.7
+Last Lower,0.999,0.751
+Last Median,0.999,0.465
+Unsorted,0.001,0.903
+First Lower,0.002,0.814
+First Median,0.001,0.407
+Last Higher,0.002,0.852
+Last Median,0.001,0.465
+Zigzag,0.499,0.214
+Half Sorted,0.504,0.04
+Last Higher,0.505,0.041
+Last Lower,0.484,0.032
+Random last median,0.49,0.033
+First Lower,0.501,0.037
+First Higher,0.504,0.035
+First Median,0.478,0.037
+Quarter sort,0.25,0.327
+First Higher,0.249,0.336
+First Lower,0.251,0.327
+First Median,0.25,0.166
+Last Higher,0.251,0.338
+Last Lower,0.251,0.311
+Last Median,0.252,0.15
+3/4 Sorted,0.751,0.054
+First Higher,0.75,0.056
+First Lower,0.751,0.053
+First Median,0.75,0.059
+Last Higher,0.751,0.056
+Last Lower,0.75,0.059
+Last Median,0.75,0.053

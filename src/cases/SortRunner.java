@@ -21,21 +21,19 @@ public class SortRunner {
 
         // fully sorted
         results.add(cases.fullySorted());
-        results.add(cases.allSame());
         results.add(cases.firstHigher());
-        results.add(cases.firstLower());
         results.add(cases.firstMedian());
-        results.add(cases.lastHigher());
+
+        results.add(cases.allSame());
         results.add(cases.lastLower());
         results.add(cases.lastMedian());
 
+
         // unsorted
         results.add(cases.reversedSorted());
-        results.add(cases.reversedFirstHigher());
         results.add(cases.reversedFirstLower());
         results.add(cases.reversedFirstMedian());
         results.add(cases.reversedLastHigher());
-        results.add(cases.reversedLastLower());
         results.add(cases.unsortedLastMedian());
 
         // half sorted
@@ -48,6 +46,15 @@ public class SortRunner {
         results.add(cases.halfSortedFirstHigher());
         results.add(cases.halfSortedFirstMedian());
 
+        // 1/4 sorted
+        results.add(cases.quarterSorted());
+        results.add(cases.quarterSortedFirstHigher());
+        results.add(cases.quarterSortedFirstLower());
+        results.add(cases.quarterSortedFirstMedian());
+        results.add(cases.quarterSortedLastHigher());
+        results.add(cases.quarterSortedLastLower());
+        results.add(cases.quarterSortedLastMedian());
+
         // 3/4 sorted
         results.add(cases.threeQuarterSorted());
         results.add(cases.threeQuarterSortedFirstHigher());
@@ -57,14 +64,7 @@ public class SortRunner {
         results.add(cases.threeQuarterSortedLastLower());
         results.add(cases.threeQuarterSortedLLastMedian());
 
-        // 1/4 sorted
-        results.add(cases.quarterSorted());
-        results.add(cases.quarterSortedFirstHigher());
-        results.add(cases.quarterSortedFirstLower());
-        results.add(cases.quarterSortedFirstMedian());
-        results.add(cases.quarterSortedLastHigher());
-        results.add(cases.quarterSortedLastLower());
-        results.add(cases.quarterSortedLastMedian());
+
 
         writeToCSV(results);
 
