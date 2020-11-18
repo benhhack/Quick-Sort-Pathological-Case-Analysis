@@ -538,7 +538,7 @@ public class PathologicalCases {
         // create a random array
         array = new int[ARRAY_LENGTH];
         for (int i = ARRAY_LENGTH - 1; i > 0; i--) {
-            array[i] = i % 4 == 0 ? 1: ARRAY_LENGTH - i;
+            array[i] = i;
         }
         sortedness = findSortedness(array);
         averageExecutionTime = findExecutionTime(array);
