@@ -6,9 +6,15 @@ these cases.
 
 ## Using the Project
 
-To use this project, run the sort runner from the Sort Runner class.
-Then, run the analysis (analysis.ipynb) in a Jupyter Notebook.
+Go into the `src` folder and run
+```bash
+javac *.java
+java SortRunner.java
+
+```
+to run the sorter on the pathological cases. The data in `results.csv` will be overwritten when the Sort Runner is executed. 
+From there, run the analysis (analysis.ipynb) to get the graphical output. An analysis of the results can be found in Report.pdf.
 
 The tests can be run within sorter package and the cases.tests package.
 Note that the Pathological Cases methods which 
-create arrays were not tested since these are trivial. 
+create arrays were not tested. 
